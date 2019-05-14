@@ -1,0 +1,17 @@
+<resources >
+    <string name = "app_name" >Jiak Si Mi</string >
+    <string name = "food_list_title" >Menu</string >
+    <string name = "lobby_title" >Today Jiak Si Mi</string >
+    <string name = "adder_title" >Update your Menu</string >
+    <string name = "food_tab_1" >Meals</string >
+    <string name = "food_tab_2" >Meat/Diary</string >
+    <string name = "food_tab_3" >Vegetable</string >
+    <string name = "food_tab_4" >Soup</string >
+    <string-array name = "food_category" >
+        <item >Meals</item >
+        <item >Meat/Diary</item >
+        <item >Vegetable</item >
+        <item >Soup</item >
+    </string-array >
+    <string name = "title_activity_food_list" >Menu</string >
+</resources >

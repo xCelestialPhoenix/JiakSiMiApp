@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android = "http://schemas.android.com/apk/res/android"
+    xmlns:app = "http://schemas.android.com/apk/res-auto"
+    xmlns:tools = "http://schemas.android.com/tools"
+    android:layout_width = "match_parent"
+    android:layout_height = "match_parent"
+    android:orientation = "vertical"
+    tools:context = ".Lobby" >>
+
+    <TextView
+        android:id = "@+id/lobbyTitleTextview"
+        android:layout_width = "0dp"
+        android:layout_height = "wrap_content"
+        android:layout_marginStart = "8dp"
+        android:layout_marginTop = "8dp"
+        android:text = "@string/lobby_title"
+        android:textSize = "30sp"
+        android:textStyle = "bold"
+        app:layout_constraintStart_toStartOf = "parent"
+        app:layout_constraintTop_toTopOf = "parent" />
+
+    <TextView
+        android:id = "@+id/menuTextView"
+        android:layout_width = "wrap_content"
+        android:layout_height = "wrap_content"
+        android:layout_marginEnd = "8dp"
+        android:text = "See Menu >"
+        android:textSize = "18sp"
+        app:layout_constraintBaseline_toBaselineOf = "@+id/lobbyTitleTextview"
+        app:layout_constraintEnd_toEndOf = "parent" />
+
+    <View
+        android:id = "@+id/divider3"
+        android:layout_width = "match_parent"
+        android:layout_height = "2dp"
+        android:layout_marginStart = "8dp"
+        android:layout_marginEnd = "8dp"
+        android:background = "?android:attr/listDivider"
+        app:layout_constraintEnd_toEndOf = "parent"
+        app:layout_constraintStart_toStartOf = "parent"
+        app:layout_constraintTop_toBottomOf = "@+id/lobbyTitleTextview"
+        tools:background = "@android:color/darker_gray" />
+
+    <TextView
+        android:id = "@+id/lunchLabel"
+        android:layout_width = "wrap_content"
+        android:layout_height = "wrap_content"
+        android:layout_marginStart = "8dp"
+        android:layout_marginTop = "16dp"
+        android:text = "Lunch:"
+        android:textSize = "24sp"
+        app:layout_constraintStart_toStartOf = "parent"
+        app:layout_constraintTop_toBottomOf = "@+id/divider3" />
+
+    <Button
+        android:id = "@+id/lunchRandButton"
+        android:layout_width = "wrap_content"
+        android:layout_height = "wrap_content"
+        android:layout_marginEnd = "8dp"
+        android:text = "Jiak Si Mi?"
+        android:textAllCaps = "false"
+        android:textSize = "14sp"
+        app:layout_constraintBaseline_toBaselineOf = "@+id/lunchTextView"
+        app:layout_constraintEnd_toEndOf = "parent" />
+
+    <TextView
+        android:id = "@+id/meatLabel"
+        android:layout_width = "wrap_content"
+        android:layout_height = "wrap_content"
+        android:layout_marginStart = "8dp"
+        android:layout_marginTop = "24dp"
+        android:text = "Meat:"
+        android:textSize = "24sp"
+        app:layout_constraintStart_toStartOf = "parent"
+        app:layout_constraintTop_toBottomOf = "@+id/lunchLabel" />
+
+    <Button
+        android:id = "@+id/meatRandButton"
+        android:layout_width = "wrap_content"
+        android:layout_height = "wrap_content"
+        android:layout_marginEnd = "8dp"
+        android:text = "Jiak Si Mi?"
+        android:textAllCaps = "false"
+        app:layout_constraintBaseline_toBaselineOf = "@+id/meatTextView"
+        app:layout_constraintEnd_toEndOf = "parent" />
+
+    <TextView
+        android:id = "@+id/lunchTextView"
+        android:layout_width = "0dp"
+        android:layout_height = "wrap_content"
+        android:layout_marginStart = "8dp"
+        android:layout_marginEnd = "8dp"
+        android:paddingStart = "8dp"
+        android:textSize = "24sp"
+        app:layout_constraintBaseline_toBaselineOf = "@+id/lunchLabel"
+        app:layout_constraintEnd_toStartOf = "@+id/lunchRandButton"
+        app:layout_constraintStart_toEndOf = "@+id/lunchLabel" />
+
+    <TextView
+        android:id = "@+id/meatTextView"
+        android:layout_width = "0dp"
+        android:layout_height = "wrap_content"
+        android:layout_marginStart = "8dp"
+        android:layout_marginEnd = "8dp"
+        android:paddingStart = "8dp"
+        android:textSize = "24sp"
+        app:layout_constraintBaseline_toBaselineOf = "@+id/meatLabel"
+        app:layout_constraintEnd_toStartOf = "@+id/meatRandButton"
+        app:layout_constraintHorizontal_bias = "1.0"
+        app:layout_constraintStart_toEndOf = "@+id/meatLabel" />
+
+    <TextView
+        android:id = "@+id/vegLabel"
+        android:layout_width = "wrap_content"
+        android:layout_height = "wrap_content"
+        android:layout_marginStart = "8dp"
+        android:layout_marginTop = "24dp"
+        android:layout_marginEnd = "8dp"
+        android:text = "Veg:"
+        android:textSize = "24sp"
+        app:layout_constraintEnd_toStartOf = "@+id/vegTextView"
+        app:layout_constraintStart_toStartOf = "parent"
+        app:layout_constraintTop_toBottomOf = "@+id/meatLabel" />
+
+    <TextView
+        android:id = "@+id/vegTextView"
+        android:layout_width = "0dp"
+        android:layout_height = "wrap_content"
+        android:layout_marginStart = "8dp"
+        android:layout_marginEnd = "8dp"
+        android:paddingStart = "8dp"
+        android:textSize = "24sp"
+        app:layout_constraintBaseline_toBaselineOf = "@+id/vegLabel"
+        app:layout_constraintEnd_toStartOf = "@+id/vegRandButton"
+        app:layout_constraintStart_toEndOf = "@+id/vegLabel" />
+
+    <TextView
+        android:id = "@+id/soupLabel"
+        android:layout_width = "wrap_content"
+        android:layout_height = "wrap_content"
+        android:layout_marginStart = "8dp"
+        android:layout_marginTop = "24dp"
+        android:layout_marginEnd = "8dp"
+        android:text = "Soup:"
+        android:textSize = "24sp"
+        app:layout_constraintEnd_toStartOf = "@+id/soupTextView"
+        app:layout_constraintStart_toStartOf = "parent"
+        app:layout_constraintTop_toBottomOf = "@+id/vegLabel" />
+
+    <TextView
+        android:id = "@+id/soupTextView"
+        android:layout_width = "0dp"
+        android:layout_height = "wrap_content"
+        android:layout_marginStart = "8dp"
+        android:layout_marginEnd = "8dp"
+        android:paddingStart = "8dp"
+        android:textSize = "24sp"
+        app:layout_constraintBaseline_toBaselineOf = "@+id/soupLabel"
+        app:layout_constraintEnd_toStartOf = "@+id/soupRandButton"
+        app:layout_constraintStart_toEndOf = "@+id/soupLabel" />
+
+    <Button
+        android:id = "@+id/vegRandButton"
+        android:layout_width = "0dp"
+        android:layout_height = "wrap_content"
+        android:layout_marginEnd = "8dp"
+        android:text = "Jiak Si Mi?"
+        android:textAllCaps = "false"
+        app:layout_constraintBaseline_toBaselineOf = "@+id/vegTextView"
+        app:layout_constraintEnd_toEndOf = "parent" />
+
+    <Button
+        android:id = "@+id/soupRandButton"
+        android:layout_width = "wrap_content"
+        android:layout_height = "wrap_content"
+        android:layout_marginEnd = "8dp"
+        android:text = "Jiak Si Mi?"
+        android:textAllCaps = "false"
+        app:layout_constraintBaseline_toBaselineOf = "@+id/soupTextView"
+        app:layout_constraintEnd_toEndOf = "parent" />
+
+    <Button
+        android:id = "@+id/massRandButton"
+        android:layout_width = "0dp"
+        android:layout_height = "wrap_content"
+        android:layout_marginStart = "8dp"
+        android:layout_marginTop = "24dp"
+        android:layout_marginEnd = "8dp"
+        android:text = "Today Jiak Si Mi?"
+        android:textAllCaps = "false"
+        app:layout_constraintEnd_toEndOf = "parent"
+        app:layout_constraintStart_toStartOf = "parent"
+        app:layout_constraintTop_toBottomOf = "@+id/soupTextView" />
+
+</androidx.constraintlayout.widget.ConstraintLayout >
