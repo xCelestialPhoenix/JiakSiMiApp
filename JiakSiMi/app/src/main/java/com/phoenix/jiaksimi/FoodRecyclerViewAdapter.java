@@ -5,10 +5,12 @@ import android.view.LayoutInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.PopupMenu;
 import android.widget.TextView;
 
+import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.recyclerview.widget.RecyclerView;
 
 import java.io.FileOutputStream;
@@ -42,46 +44,32 @@ public class FoodRecyclerViewAdapter extends RecyclerView.Adapter<FoodRecyclerVi
     @Override
     public void onBindViewHolder(final ViewHolder holder, final int position) {
         holder.foodNameTextView.setText(dataList.get(position));
-        holder.layout.setOnLongClickListener(new View.OnLongClickListener() {
-
+        holder.deleteIV.setOnClickListener(new View.OnClickListener() {
             @Override
-            public boolean onLongClick(View v) {
-                PopupMenu popup = new PopupMenu(context, holder.layout);
-                popup.getMenuInflater().inflate(R.menu.food_list_menu, popup.getMenu());
-                popup.setOnMenuItemClickListener(new PopupMenu.OnMenuItemClickListener() {
-                    public boolean onMenuItemClick(MenuItem item) {
-                        String selection = item.getTitle().toString();
-                        switch (selection) {
-                            case "Delete":
-                                FileOutputStream outStream = null;
-                                dataList.remove(position);
-                                String filename = type + ".data";
-                                String data = "";
-                                for(String entry : dataList) {
-                                    data += entry + "\n";
-                                }
-                                try {
-                                     outStream = context.openFileOutput(filename,
-                                             context.MODE_PRIVATE);
-                                    outStream.write(data.getBytes());
-                                } catch (Exception e) {
-                                    e.printStackTrace();
-                                } finally {
-                                    if(outStream != null) {
-                                        try {
-                                            outStream.close();
-                                        } catch (IOException e) {
-                                            e.printStackTrace();
-                                        }
-                                    }
-                                }
-                                FoodRecyclerViewAdapter.super.notifyDataSetChanged();
+            public void onClick(View v) {
+                FileOutputStream outStream = null;
+                dataList.remove(position);
+                String filename = type + ".data";
+                String data = "";
+                for(String entry : dataList) {
+                    data += entry + "\n";
+                }
+                try {
+                    outStream = context.openFileOutput(filename,
+                            context.MODE_PRIVATE);
+                    outStream.write(data.getBytes());
+                } catch (Exception e) {
+                    e.printStackTrace();
+                } finally {
+                    if(outStream != null) {
+                        try {
+                            outStream.close();
+                        } catch (IOException e) {
+                            e.printStackTrace();
                         }
-                        return true;
                     }
-                });
-                popup.show();
-                return true;
+                }
+                FoodRecyclerViewAdapter.super.notifyDataSetChanged();
             }
         });
     }
@@ -98,12 +86,14 @@ public class FoodRecyclerViewAdapter extends RecyclerView.Adapter<FoodRecyclerVi
     class ViewHolder extends RecyclerView.ViewHolder {
 
         TextView foodNameTextView;
-        LinearLayout layout;
+        ImageView deleteIV;
+        ConstraintLayout layout;
 
         public ViewHolder(View view) {
             super(view);
             foodNameTextView = view.findViewById(R.id.foodNameTextView);
             layout = view.findViewById(R.id.foodViewLayout);
+            deleteIV = view.findViewById(R.id.deleteIV);
         }
     }
 }

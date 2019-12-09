@@ -13,6 +13,7 @@ import java.util.ArrayList;
 
 public class Loader extends AppCompatActivity {
 
+    //Arraylists to store the items from each category
     static ArrayList<String> mealList = new ArrayList<>();
     static ArrayList<String> meatList = new ArrayList<>();
     static ArrayList<String> soupList = new ArrayList<>();
@@ -20,15 +21,12 @@ public class Loader extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_loader);
 
-        //Read all the menu data from data files
         readData();
 
-        //Goes to the main page
-        Intent intent = new Intent(this, Lobby.class);
+        Intent intent = new Intent(this, MainActivity.class);
         startActivity(intent);
     }
 

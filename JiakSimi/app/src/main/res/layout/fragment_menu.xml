@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".Menu"
+    android:id="@+id/constraintLayout">
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/foodRecyclerView"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
+        app:layout_constraintBottom_toTopOf="@+id/tabLayout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.google.android.material.tabs.TabLayout
+        android:id="@+id/tabLayout"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="#FAEAEA"
+        android:verticalScrollbarPosition="defaultPosition"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:tabIndicatorColor="@color/colorAccent"
+        app:tabIndicatorGravity="top"
+        app:tabPaddingEnd="8dp"
+        app:tabPaddingStart="8dp"
+        app:tabSelectedTextColor="#3C3C3C"
+        app:tabTextColor="#6C6C6C">
+
+        <com.google.android.material.tabs.TabItem
+            android:id="@+id/mealTab"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/menu_sub_tab_1" />
+
+        <com.google.android.material.tabs.TabItem
+            android:id="@+id/meatTab"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/menu_sub_tab_2" />
+
+        <com.google.android.material.tabs.TabItem
+            android:id="@+id/vegTab"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/menu_sub_tab_3" />
+
+        <com.google.android.material.tabs.TabItem
+            android:id="@+id/soupTab"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/menu_sub_tab_4" />
+    </com.google.android.material.tabs.TabLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
