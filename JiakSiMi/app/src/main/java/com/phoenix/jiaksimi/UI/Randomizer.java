@@ -1,10 +1,10 @@
-package com.phoenix.jiaksimi;
+package com.phoenix.jiaksimi.Ui;
 
 import android.content.Context;
-import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 
+import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 
 import android.view.LayoutInflater;
@@ -13,8 +13,9 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.TextView;
 
-import java.util.Random;
-
+import com.phoenix.jiaksimi.MainActivity;
+import com.phoenix.jiaksimi.R;
+import com.phoenix.jiaksimi.Util.FoodType;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -37,19 +38,14 @@ public class Randomizer extends Fragment {
     private Button randomVegButton;
     private Button randomSoupButton;
     private Button massRandomButton;
-    private Random randGenerator;
-
-    public Randomizer() {
-        // Required empty public constructor
-    }
 
     /**
      * Use this factory method to create a new instance of
      * this fragment using the provided parameters.
+     *
      * @return A new instance of fragment Randomizer.
      */
-    // TODO: Rename and change types and number of parameters
-    public static Randomizer newInstance() {
+    static Randomizer newInstance() {
         return new Randomizer();
     }
 
@@ -64,8 +60,7 @@ public class Randomizer extends Fragment {
         // Inflate the layout for this fragment
         View root = inflater.inflate(R.layout.fragment_randomizer, container, false);
         initView(root);
-        initListener(root);
-        randGenerator = new Random();
+        initListener();
         return root;
     }
 
@@ -81,15 +76,16 @@ public class Randomizer extends Fragment {
         soupTextView = view.findViewById(R.id.soupTextView);
     }
 
-    private void initListener(final View view) {
+    private void initListener() {
+
+        final MainActivity activity = (MainActivity) getActivity();
+        assert activity != null;
 
         randomLunchButton.setOnClickListener(new View.OnClickListener() {
 
             @Override
             public void onClick(View v) {
-                if(Loader.mealList.size() > 0) {
-                    lunchTextView.setText(Loader.mealList.get(randGenerator.nextInt(Loader.mealList.size())));
-                }
+                lunchTextView.setText(activity.randomizeFood(FoodType.MEAL));
             }
         });
 
@@ -97,9 +93,8 @@ public class Randomizer extends Fragment {
 
             @Override
             public void onClick(View v) {
-                if(Loader.meatList.size() > 0) {
-                    meatTextView.setText(Loader.meatList.get(randGenerator.nextInt(Loader.meatList.size())));
-                }
+
+                meatTextView.setText(activity.randomizeFood(FoodType.MEAT));
             }
         });
 
@@ -107,9 +102,7 @@ public class Randomizer extends Fragment {
 
             @Override
             public void onClick(View v) {
-                if(Loader.vegList.size() > 0) {
-                    vegTextView.setText(Loader.vegList.get(randGenerator.nextInt(Loader.vegList.size())));
-                }
+                vegTextView.setText(activity.randomizeFood(FoodType.VEG));
             }
         });
 
@@ -117,9 +110,7 @@ public class Randomizer extends Fragment {
 
             @Override
             public void onClick(View v) {
-                if(Loader.soupList.size() > 0) {
-                    soupTextView.setText(Loader.soupList.get(randGenerator.nextInt(Loader.soupList.size())));
-                }
+                soupTextView.setText(activity.randomizeFood(FoodType.SOUP));
             }
         });
 
@@ -127,24 +118,16 @@ public class Randomizer extends Fragment {
             @Override
             public void onClick(View v) {
 
-                if(Loader.mealList.size() > 0) {
-                    lunchTextView.setText(Loader.mealList.get(randGenerator.nextInt(Loader.mealList.size())));
-                }
-                if(Loader.meatList.size() > 0) {
-                    meatTextView.setText(Loader.meatList.get(randGenerator.nextInt(Loader.meatList.size())));
-                }
-                if(Loader.vegList.size() > 0) {
-                    vegTextView.setText(Loader.vegList.get(randGenerator.nextInt(Loader.vegList.size())));
-                }
-                if(Loader.soupList.size() > 0) {
-                    soupTextView.setText(Loader.soupList.get(randGenerator.nextInt(Loader.soupList.size())));
-                }
+                lunchTextView.setText(activity.randomizeFood(FoodType.MEAL));
+                meatTextView.setText(activity.randomizeFood(FoodType.MEAT));
+                vegTextView.setText(activity.randomizeFood(FoodType.VEG));
+                soupTextView.setText(activity.randomizeFood(FoodType.SOUP));
             }
         });
     }
 
     @Override
-    public void onAttach(Context context) {
+    public void onAttach(@NonNull Context context) {
         super.onAttach(context);
         if (context instanceof OnFragmentInteractionListener) {
             mListener = (OnFragmentInteractionListener) context;

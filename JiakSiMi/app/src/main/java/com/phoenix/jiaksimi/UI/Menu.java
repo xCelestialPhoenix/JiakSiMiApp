@@ -1,20 +1,21 @@
-package com.phoenix.jiaksimi;
+package com.phoenix.jiaksimi.Ui;
 
 import android.content.Context;
-import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.TextView;
 
+import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.google.android.material.tabs.TabItem;
 import com.google.android.material.tabs.TabLayout;
+import com.phoenix.jiaksimi.MainActivity;
+import com.phoenix.jiaksimi.R;
+import com.phoenix.jiaksimi.Util.FoodType;
 
 
 /**
@@ -31,13 +32,9 @@ public class Menu extends Fragment {
 
     private TabLayout tabLayout;
     private RecyclerView foodRecyclerView;
-    protected static FoodRecyclerViewAdapter rAdapter;
+    private FoodRecyclerViewAdapter rAdapter;
 
-    public Menu() {
-        // Required empty public constructor
-    }
-
-    public static Menu newInstance() {
+    static Menu newInstance() {
         return new Menu();
     }
 
@@ -52,10 +49,13 @@ public class Menu extends Fragment {
         // Inflate the layout for this fragment
         View root = inflater.inflate(R.layout.fragment_menu, container, false);
         initView(root);
-        initListener(root);
+        initListener();
+
+        MainActivity activity = (MainActivity) getActivity();
+        assert activity != null;
 
         //Setting the properties of recyclerView and its components
-        rAdapter = new FoodRecyclerViewAdapter(getActivity(), Loader.mealList, "meal");
+        rAdapter = new FoodRecyclerViewAdapter(activity, activity.getFoodList(FoodType.MEAL), "meal");
         foodRecyclerView.setAdapter(rAdapter);
         foodRecyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
         foodRecyclerView.setHasFixedSize(true);
@@ -68,34 +68,41 @@ public class Menu extends Fragment {
         foodRecyclerView = view.findViewById(R.id.foodRecyclerView);
     }
 
-    private void initListener(final View root) {
+    private void initListener() {
+
+        final MainActivity activity = (MainActivity) getActivity();
+        assert activity != null;
+
         tabLayout.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
+
             @Override
             public void onTabSelected(TabLayout.Tab tab) {
                 int index = tab.getPosition();
                 switch (index) {
                     case 0:
-                        rAdapter.changeDataSet(Loader.mealList, "meal");
+                        rAdapter.changeDataSet(activity.getFoodList(FoodType.MEAL), "meal");
                         rAdapter.notifyDataSetChanged();
                         break;
                     case 1:
-                        rAdapter.changeDataSet(Loader.meatList, "meat");
+                        rAdapter.changeDataSet(activity.getFoodList(FoodType.MEAT), "meat");
                         rAdapter.notifyDataSetChanged();
                         break;
                     case 2:
-                        rAdapter.changeDataSet(Loader.vegList, "veg");
+                        rAdapter.changeDataSet(activity.getFoodList(FoodType.VEG), "veg");
                         rAdapter.notifyDataSetChanged();
                         break;
                     case 3:
-                        rAdapter.changeDataSet(Loader.soupList, "soup");
+                        rAdapter.changeDataSet(activity.getFoodList(FoodType.SOUP), "soup");
                         rAdapter.notifyDataSetChanged();
                         break;
                 }
             }
+
             @Override
             public void onTabUnselected(TabLayout.Tab tab) {
                 //Unused
             }
+
             @Override
             public void onTabReselected(TabLayout.Tab tab) {
                 //Unused
@@ -104,8 +111,10 @@ public class Menu extends Fragment {
     }
 
     @Override
-    public void onAttach(Context context) {
+    public void onAttach(@NonNull Context context) {
+
         super.onAttach(context);
+
         if (context instanceof OnFragmentInteractionListener) {
             mListener = (OnFragmentInteractionListener) context;
         } else {
@@ -131,7 +140,6 @@ public class Menu extends Fragment {
      * >Communicating with Other Fragments</a> for more information.
      */
     public interface OnFragmentInteractionListener {
-        // TODO: Update argument type and name
         void onFragmentInteraction(Uri uri);
     }
 }

@@ -5,20 +5,31 @@
     <string name="menu_tab">Menu</string>
     <string name="adder_tab">Add item</string>
 
-    <!-- For Tab layout in menu-->
+    <!-- For randomizer -->
+    <string name="rand_item_1">Lunch:</string>
+    <string name="rand_item_2">Meat/Dairy:</string>
+    <string name="rand_item_3">Vegetable:</string>
+    <string name="rand_item_4">Soup:</string>
+    <string name="randomize">Randomize</string>
+    <string name="randomize_all">Randomize All</string>
+
+    <!-- For Tab layout in menu -->
     <string name="menu_sub_tab_1">Meals</string>
     <string name="menu_sub_tab_2">Meat/Diary</string>
     <string name="menu_sub_tab_3">Vegetable</string>
     <string name="menu_sub_tab_4">Soup</string>
 
-    <!-- For spinners in adder-->
+    <!-- For adder -->
+    <string name="adder_add_button">Add</string>
+    <string name="adder_add_item_title">Add item:</string>
+    <string name="adder_category_title">Category:</string>
+    <string name="adder_enter_food_hint">Enter food name</string>
+
+    <!-- For spinners in adder -->
     <string-array name="food_category">
         <item>Meals</item>
         <item>Meat/Diary</item>
         <item>Vegetable</item>
         <item>Soup</item>
     </string-array>
-
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

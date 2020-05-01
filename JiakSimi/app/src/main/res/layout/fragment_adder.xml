@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".Adder"
+    tools:context=".Ui.Adder"
     android:id="@+id/constraintLayout">
 
     <TextView
@@ -14,7 +14,7 @@
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
-        android:text="Add item:"
+        android:text="@string/adder_add_item_title"
         android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
@@ -28,8 +28,9 @@
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
+        android:autofillHints='"food item"'
         android:ems="10"
-        android:hint="Enter food name"
+        android:hint="@string/adder_enter_food_hint"
         android:inputType="textCapWords"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
@@ -37,14 +38,14 @@
         app:layout_constraintTop_toBottomOf="@+id/addItemLabel" />
 
     <Button
-        android:id = "@+id/addButton"
-        android:layout_width = "wrap_content"
-        android:layout_height = "wrap_content"
-        android:layout_marginTop = "16dp"
-        android:layout_marginEnd = "8dp"
-        android:text = "Add"
-        app:layout_constraintEnd_toEndOf = "parent"
-        app:layout_constraintTop_toBottomOf = "@+id/categorySpinner" />
+        android:id="@+id/addButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="8dp"
+        android:text="@string/adder_add_button"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/categorySpinner" />
 
     <Spinner
         android:id="@+id/categorySpinner"
@@ -66,7 +67,7 @@
         android:layout_marginStart="8dp"
         android:layout_marginTop="16dp"
         android:layout_marginEnd="8dp"
-        android:text="Category:"
+        android:text="@string/adder_category_title"
         android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"

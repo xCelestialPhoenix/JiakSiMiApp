@@ -1,17 +1,14 @@
-package com.phoenix.jiaksimi.ui.main;
+package com.phoenix.jiaksimi.Ui;
 
 import android.content.Context;
 
+import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
-import androidx.annotation.StringRes;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentPagerAdapter;
 
-import com.phoenix.jiaksimi.Adder;
-import com.phoenix.jiaksimi.Menu;
 import com.phoenix.jiaksimi.R;
-import com.phoenix.jiaksimi.Randomizer;
 
 /**
  * A [FragmentPagerAdapter] that returns a fragment corresponding to
@@ -19,48 +16,42 @@ import com.phoenix.jiaksimi.Randomizer;
  */
 public class SectionsPagerAdapter extends FragmentPagerAdapter {
 
-    Context mContext;
+    private Context mContext;
 
     public SectionsPagerAdapter(Context context, FragmentManager fm) {
         super(fm);
         mContext = context;
     }
 
+    @NonNull
     @Override
     public Fragment getItem(int position) {
         // getItem is called to instantiate the fragment for the given page.
         // Return a PlaceholderFragment (defined as a static inner class below).
-        Fragment fragment = null;
         switch (position) {
-            case 0:
-                fragment = Randomizer.newInstance();
-                break;
             case 1:
-                fragment = Menu.newInstance();
-                break;
+                return Menu.newInstance();
             case 2:
-                fragment = Adder.newInstance();
-                break;
+                return Adder.newInstance();
+            default:
+                return Randomizer.newInstance();
         }
-        return fragment;
     }
 
     @Nullable
     @Override
     public CharSequence getPageTitle(int position) {
-        String title = "";
+
         switch (position) {
             case 0:
-                title = mContext.getResources().getString(R.string.rand_tab);
-                break;
+                return mContext.getResources().getString(R.string.rand_tab);
             case 1:
-                title = mContext.getResources().getString(R.string.menu_tab);
-                break;
+                return mContext.getResources().getString(R.string.menu_tab);
             case 2:
-                title = mContext.getResources().getString(R.string.adder_tab);
-                break;
+                return mContext.getResources().getString(R.string.adder_tab);
+            default:
+                return "";
         }
-        return title;
     }
 
     @Override

@@ -1,4 +1,4 @@
-package com.phoenix.jiaksimi;
+package com.phoenix.jiaksimi.Ui;
 
 import android.content.Context;
 import android.net.Uri;
@@ -11,17 +11,25 @@ import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.Spinner;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.fragment.app.Fragment;
 
 import com.google.android.material.snackbar.Snackbar;
+import com.phoenix.jiaksimi.MainActivity;
+import com.phoenix.jiaksimi.R;
+import com.phoenix.jiaksimi.Util.FoodType;
 
 import java.io.FileOutputStream;
 import java.io.IOException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 import static android.content.Context.MODE_APPEND;
+import static com.phoenix.jiaksimi.Util.Filepath.MEAL_DATA_FILEPATH;
+import static com.phoenix.jiaksimi.Util.Filepath.MEAT_DATA_FILEPATH;
+import static com.phoenix.jiaksimi.Util.Filepath.SOUP_DATA_FILEPATH;
+import static com.phoenix.jiaksimi.Util.Filepath.VEG_DATA_FILEPATH;
 
 
 /**
@@ -34,16 +42,15 @@ import static android.content.Context.MODE_APPEND;
  */
 public class Adder extends Fragment {
 
-    private OnFragmentInteractionListener mListener;
+    private final static String LOG_TAG = Adder.class.getName();
+    private final static Logger logger = Logger.getLogger(LOG_TAG);
 
+    private OnFragmentInteractionListener mListener;
     private Button addButton;
     private TextView foodEditText;
     private Spinner categorySpinner;
     private ConstraintLayout constraintLayout;
 
-    public Adder() {
-        // Required empty public constructor
-    }
 
     public static Adder newInstance() {
         return new Adder();
@@ -64,24 +71,6 @@ public class Adder extends Fragment {
         return root;
     }
 
-    private void writeData(String data, String fileName) {
-        FileOutputStream outStream = null;
-        try {
-            outStream = getActivity().openFileOutput(fileName, MODE_APPEND);
-            outStream.write(data.getBytes());
-        } catch (Exception e) {
-            e.printStackTrace();
-        } finally {
-            if(outStream != null) {
-                try {
-                    outStream.close();
-                } catch (IOException e) {
-                    e.printStackTrace();
-                }
-            }
-        }
-    }
-
     private void initView(final View view) {
         foodEditText = view.findViewById(R.id.foodEditText);
         categorySpinner = view.findViewById(R.id.categorySpinner);
@@ -90,53 +79,54 @@ public class Adder extends Fragment {
     }
 
     private void initListener(final View view) {
+
         addButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 //Prevent adding empty entries into the dataset
-                if(foodEditText.getText().toString().isEmpty()) {
-                    Snackbar.make(view, "Insert a name to add",
-                            Snackbar.LENGTH_SHORT).show();
-                } else {
-                    String food = foodEditText.getText().toString();
-                    String category = categorySpinner.getSelectedItem().toString();
-
-                    //Check which category to write into
-                    switch (category) {
-                        case "Meals":
-                            writeData(food + "\n", "meal.data");
-                            Loader.mealList.add(food);
-                            break;
-                        case "Meat/Diary":
-                            writeData(food + "\n", "meat.data");
-                            Loader.meatList.add(food);
-                            break;
-                        case "Soup":
-                            writeData(food + "\n", "soup.data");
-                            Loader.soupList.add(food);
-                            break;
-                        case "Vegetable":
-                            writeData(food + "\n", "veg.data");
-                            Loader.vegList.add(food);
-                            break;
-                    }
-
-                    //Clear out foodEditText after the entry has been stored
-                    foodEditText.setText("");
-                    //Notify recyclerView adapter to update
-                    Menu.rAdapter.notifyDataSetChanged();
-                    //Confirmation Notification
-                    Snackbar.make(view, "Item added", Snackbar.LENGTH_SHORT).show();
+                if (foodEditText.getText().toString().isEmpty()) {
+                    Snackbar.make(view, "Insert a name to add", Snackbar.LENGTH_SHORT).show();
+                    return;
                 }
+
+                String food = foodEditText.getText().toString();
+                String category = categorySpinner.getSelectedItem().toString();
+                MainActivity activity = (MainActivity) getActivity();
+
+                //Check which category to write into
+                switch (category) {
+                    case "Meals":
+                        activity.writeData(food + "\n", MEAL_DATA_FILEPATH);
+                        activity.addFoodItem(food, FoodType.MEAL);
+                        break;
+                    case "Meat/Diary":
+                        activity.writeData(food + "\n", MEAT_DATA_FILEPATH);
+                        activity.addFoodItem(food, FoodType.MEAT);
+                        break;
+                    case "Soup":
+                        activity.writeData(food + "\n", SOUP_DATA_FILEPATH);
+                        activity.addFoodItem(food, FoodType.SOUP);
+                        break;
+                    case "Vegetable":
+                        activity.writeData(food + "\n", VEG_DATA_FILEPATH);
+                        activity.addFoodItem(food, FoodType.VEG);
+                        break;
+                    default:
+                        logger.log(Level.WARNING, "Invalid food category");
+                }
+
+                //Clear out foodEditText after the entry has been stored
+                foodEditText.setText("");
+                //Confirmation Notification
+                Snackbar.make(view, "Item added", Snackbar.LENGTH_SHORT).show();
             }
         });
 
         foodEditText.setOnFocusChangeListener(new View.OnFocusChangeListener() {
             @Override
             public void onFocusChange(View v, boolean hasFocus) {
-                if(!hasFocus)
-                {
-                    InputMethodManager imm=(InputMethodManager) getActivity().getSystemService(Context.INPUT_METHOD_SERVICE);
+                if (!hasFocus) {
+                    InputMethodManager imm = (InputMethodManager) getActivity().getSystemService(Context.INPUT_METHOD_SERVICE);
                     imm.hideSoftInputFromWindow(v.getWindowToken(), 0);
                 }
             }
@@ -179,7 +169,6 @@ public class Adder extends Fragment {
      * >Communicating with Other Fragments</a> for more information.
      */
     public interface OnFragmentInteractionListener {
-        // TODO: Update argument type and name
         void onFragmentInteraction(Uri uri);
     }
 }
