@@ -20,12 +20,9 @@ import com.phoenix.jiaksimi.MainActivity;
 import com.phoenix.jiaksimi.R;
 import com.phoenix.jiaksimi.Util.FoodType;
 
-import java.io.FileOutputStream;
-import java.io.IOException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-import static android.content.Context.MODE_APPEND;
 import static com.phoenix.jiaksimi.Util.Filepath.MEAL_DATA_FILEPATH;
 import static com.phoenix.jiaksimi.Util.Filepath.MEAT_DATA_FILEPATH;
 import static com.phoenix.jiaksimi.Util.Filepath.SOUP_DATA_FILEPATH;
@@ -35,7 +32,7 @@ import static com.phoenix.jiaksimi.Util.Filepath.VEG_DATA_FILEPATH;
 /**
  * A simple {@link Fragment} subclass.
  * Activities that contain this fragment must implement the
- * {@link Adder.OnFragmentInteractionListener} interface
+ * {@link OnFragmentInteractionListener} interface
  * to handle interaction events.
  * Use the {@link Adder#newInstance} factory method to
  * create an instance of this fragment.

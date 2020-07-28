@@ -20,7 +20,7 @@ import com.phoenix.jiaksimi.Util.FoodType;
 /**
  * A simple {@link Fragment} subclass.
  * Activities that contain this fragment must implement the
- * {@link Randomizer.OnFragmentInteractionListener} interface
+ * {@link OnFragmentInteractionListener} interface
  * to handle interaction events.
  * Use the {@link Randomizer#newInstance} factory method to
  * create an instance of this fragment.

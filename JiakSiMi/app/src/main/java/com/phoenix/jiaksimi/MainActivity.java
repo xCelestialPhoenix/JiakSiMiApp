@@ -3,12 +3,9 @@ package com.phoenix.jiaksimi;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
-
-import com.google.android.material.tabs.TabLayout;
-
-import androidx.viewpager.widget.ViewPager;
 import androidx.appcompat.app.AppCompatActivity;
-
+import androidx.viewpager.widget.ViewPager;
+import com.google.android.material.tabs.TabLayout;
 import com.phoenix.jiaksimi.Logic.Logic;
 import com.phoenix.jiaksimi.Ui.Adder;
 import com.phoenix.jiaksimi.Ui.Menu;

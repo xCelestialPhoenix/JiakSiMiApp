@@ -2,13 +2,70 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="42093dba-e509-4eba-9272-16d11b5f10ea" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/JiakSiMi/app/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/JiakSiMi/app/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JiakSiMi/app/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/JiakSiMi/app/src/main/AndroidManifest.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JiakSiMi/app/src/main/java/com/phoenix/jiaksimi/Lobby.java" beforeDir="false" afterPath="$PROJECT_DIR$/JiakSiMi/app/src/main/java/com/phoenix/jiaksimi/Lobby.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JiakSiMi/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/JiakSiMi/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JiakSiMi/gradle/wrapper/gradle-wrapper.properties" beforeDir="false" afterPath="$PROJECT_DIR$/JiakSiMi/gradle/wrapper/gradle-wrapper.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/JiakSiMi/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/JiakSiMi/.idea/google-java-format.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/JiakSiMi/.idea/gradle.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/JiakSiMi/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/JiakSiMi/.idea/runConfigurations.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/JiakSiMi/app/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/JiakSiMi/app/build.gradle" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/JiakSiMi/app/proguard-rules.pro" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/JiakSiMi/app/src/androidTest/java/com/phoenix/jiaksimi/ExampleInstrumentedTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/JiakSiMi/app/src/main/AndroidManifest.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/JiakSiMi/app/src/main/ic_launcher-playstore.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/JiakSiMi/app/src/main/java/com/phoenix/jiaksimi/Loader.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/JiakSiMi/app/src/main/java/com/phoenix/jiaksimi/Logic/Logic.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/JiakSiMi/app/src/main/java/com/phoenix/jiaksimi/Logic/LogicManager.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/JiakSiMi/app/src/main/java/com/phoenix/jiaksimi/Model/Model.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/JiakSiMi/app/src/main/java/com/phoenix/jiaksimi/Model/ModelManager.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/JiakSiMi/app/src/main/java/com/phoenix/jiaksimi/Storage/Storage.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/JiakSiMi/app/src/main/java/com/phoenix/jiaksimi/Storage/StorageManager.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/JiakSiMi/app/src/main/java/com/phoenix/jiaksimi/UI/Adder.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/JiakSiMi/app/src/main/java/com/phoenix/jiaksimi/UI/FoodRecyclerViewAdapter.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/JiakSiMi/app/src/main/java/com/phoenix/jiaksimi/UI/Menu.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/JiakSiMi/app/src/main/java/com/phoenix/jiaksimi/UI/Randomizer.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/JiakSiMi/app/src/main/java/com/phoenix/jiaksimi/UI/SectionsPagerAdapter.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/JiakSiMi/app/src/main/java/com/phoenix/jiaksimi/Util/Filepath.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/JiakSiMi/app/src/main/java/com/phoenix/jiaksimi/Util/FoodType.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/JiakSiMi/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/JiakSiMi/app/src/main/res/drawable/ic_launcher_background.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/JiakSiMi/app/src/main/res/layout/activity_loader.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/JiakSiMi/app/src/main/res/layout/food_list_view.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/JiakSiMi/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/JiakSiMi/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/JiakSiMi/app/src/main/res/mipmap-hdpi/ic_launcher_foreground.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/JiakSiMi/app/src/main/res/mipmap-hdpi/ic_launcher_round.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/JiakSiMi/app/src/main/res/mipmap-mdpi/ic_launcher_foreground.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/JiakSiMi/app/src/main/res/mipmap-mdpi/ic_launcher_round.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/JiakSiMi/app/src/main/res/mipmap-xhdpi/ic_launcher_foreground.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/JiakSiMi/app/src/main/res/mipmap-xhdpi/ic_launcher_round.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/JiakSiMi/app/src/main/res/mipmap-xxhdpi/ic_launcher_foreground.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/JiakSiMi/app/src/main/res/mipmap-xxhdpi/ic_launcher_round.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/JiakSiMi/app/src/main/res/mipmap-xxxhdpi/ic_launcher_foreground.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/JiakSiMi/app/src/main/res/mipmap-xxxhdpi/ic_launcher_round.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/JiakSiMi/app/src/main/res/values-w820dp/dimens.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/JiakSiMi/app/src/main/res/values/colors.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/JiakSiMi/app/src/main/res/values/dimens.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/JiakSiMi/app/src/main/res/values/ic_launcher_background.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/JiakSiMi/app/src/main/res/values/strings.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/JiakSiMi/app/src/main/res/values/styles.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/JiakSiMi/app/src/test/java/com/phoenix/jiaksimi/ExampleUnitTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/JiakSiMi/build.gradle" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/JiakSiMi/gradle.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/JiakSiMi/gradle/wrapper/gradle-wrapper.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/JiakSiMi/gradle/wrapper/gradle-wrapper.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/JiakSiMi/gradlew" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/JiakSiMi/gradlew.bat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/JiakSiMi/settings.gradle" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/JiakSimi/.idea/codeStyles/Project.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/JiakSimi/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/JiakSimi/app/src/main/java/com/phoenix/jiaksimi/MainActivity.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/JiakSimi/app/src/main/res/layout/activity_main.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/JiakSimi/app/src/main/res/layout/fragment_adder.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/JiakSimi/app/src/main/res/layout/fragment_menu.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/JiakSimi/app/src/main/res/layout/fragment_randomizer.xml" beforeDir="false" />
     </list>
-    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -21,47 +78,17 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="85" />
-    <option name="y" value="25" />
-    <option name="width" value="1750" />
-    <option name="height" value="969" />
-  </component>
-  <component name="ProjectView">
-    <navigator currentView="ProjectPane" proportions="" version="1">
-      <foldersAlwaysOnTop value="true" />
-    </navigator>
-    <panes>
-      <pane id="Scope" />
-      <pane id="ProjectPane">
-        <subPane>
-          <expand>
-            <path>
-              <item name="JiakSiMiApp" type="b2602c69:ProjectViewProjectNode" />
-              <item name="JiakSiMiApp" type="462c0819:PsiDirectoryNode" />
-            </path>
-          </expand>
-          <select />
-        </subPane>
-      </pane>
-      <pane id="PackagesPane" />
-    </panes>
+  <component name="ProjectId" id="1fJoTuDVWedRZ9nLTVNhdyoxXza" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="android.sdk.path" value="$USER_HOME$/AppData/Local/Android/Sdk" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/JiakSiMi" />
-  </component>
-  <component name="RunDashboard">
-    <option name="ruleStates">
-      <list>
-        <RuleState>
-          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
-        </RuleState>
-        <RuleState>
-          <option name="name" value="StatusDashboardGroupingRule" />
-        </RuleState>
-      </list>
-    </option>
+    <property name="settings.editor.selected.configurable" value="configurable.group.build" />
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -76,25 +103,10 @@
     </task>
     <servers />
   </component>
-  <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
-    <layout>
-      <window_info id="Captures" order="0" weight="0.25" />
-      <window_info active="true" content_ui="combo" id="Project" order="1" visible="true" weight="0.23551106" />
-      <window_info id="Structure" order="2" side_tool="true" />
-      <window_info id="Image Layers" order="3" />
-      <window_info id="Designer" order="4" />
-      <window_info id="Resources Explorer" order="5" />
-      <window_info id="Capture Tool" order="6" />
-      <window_info id="Favorites" order="7" side_tool="true" />
-      <window_info anchor="bottom" id="Version Control" order="0" />
-      <window_info anchor="bottom" id="TODO" order="1" />
-      <window_info anchor="bottom" id="Terminal" order="2" />
-      <window_info anchor="bottom" id="Event Log" order="3" side_tool="true" />
-      <window_info anchor="right" id="Capture Analysis" order="0" />
-      <window_info anchor="right" id="Theme Preview" order="1" />
-      <window_info anchor="right" id="Assistant" order="2" visible="true" weight="0.23933902" />
-      <window_info anchor="right" id="Palette&#9;" order="3" />
-    </layout>
+  <component name="WindowStateProjectService">
+    <state x="485" y="188" width="1022" height="737" key="SettingsEditor" timestamp="1595945582037">
+      <screen x="72" y="27" width="1848" height="1053" />
+    </state>
+    <state x="485" y="188" width="1022" height="737" key="SettingsEditor/72.27.1848.1053@72.27.1848.1053" timestamp="1595945582037" />
   </component>
 </project>

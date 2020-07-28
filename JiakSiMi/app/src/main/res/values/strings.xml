@@ -14,7 +14,7 @@
     <string name="randomize_all">Randomize All</string>
 
     <!-- For Tab layout in menu -->
-    <string name="menu_sub_tab_1">Meals</string>
+    <string name="menu_sub_tab_1">Lunch</string>
     <string name="menu_sub_tab_2">Meat/Diary</string>
     <string name="menu_sub_tab_3">Vegetable</string>
     <string name="menu_sub_tab_4">Soup</string>
@@ -27,7 +27,7 @@
 
     <!-- For spinners in adder -->
     <string-array name="food_category">
-        <item>Meals</item>
+        <item>Lunch</item>
         <item>Meat/Diary</item>
         <item>Vegetable</item>
         <item>Soup</item>
