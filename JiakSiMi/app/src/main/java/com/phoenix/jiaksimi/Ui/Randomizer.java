@@ -85,7 +85,7 @@ public class Randomizer extends Fragment {
 
             @Override
             public void onClick(View v) {
-                lunchTextView.setText(activity.randomizeFood(FoodType.MEAL));
+                lunchTextView.setText(activity.randomizeFood(FoodType.LUNCH));
             }
         });
 
@@ -118,7 +118,7 @@ public class Randomizer extends Fragment {
             @Override
             public void onClick(View v) {
 
-                lunchTextView.setText(activity.randomizeFood(FoodType.MEAL));
+                lunchTextView.setText(activity.randomizeFood(FoodType.LUNCH));
                 meatTextView.setText(activity.randomizeFood(FoodType.MEAT));
                 vegTextView.setText(activity.randomizeFood(FoodType.VEG));
                 soupTextView.setText(activity.randomizeFood(FoodType.SOUP));

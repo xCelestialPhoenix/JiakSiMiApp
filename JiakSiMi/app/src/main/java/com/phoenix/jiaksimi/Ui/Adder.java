@@ -23,7 +23,7 @@ import com.phoenix.jiaksimi.Util.FoodType;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-import static com.phoenix.jiaksimi.Util.Filepath.MEAL_DATA_FILEPATH;
+import static com.phoenix.jiaksimi.Util.Filepath.LUNCH_DATA_FILEPATH;
 import static com.phoenix.jiaksimi.Util.Filepath.MEAT_DATA_FILEPATH;
 import static com.phoenix.jiaksimi.Util.Filepath.SOUP_DATA_FILEPATH;
 import static com.phoenix.jiaksimi.Util.Filepath.VEG_DATA_FILEPATH;
@@ -92,9 +92,9 @@ public class Adder extends Fragment {
 
                 //Check which category to write into
                 switch (category) {
-                    case "Meals":
-                        activity.writeData(food + "\n", MEAL_DATA_FILEPATH);
-                        activity.addFoodItem(food, FoodType.MEAL);
+                    case "Lunch":
+                        activity.writeData(food + "\n", LUNCH_DATA_FILEPATH);
+                        activity.addFoodItem(food, FoodType.LUNCH);
                         break;
                     case "Meat/Diary":
                         activity.writeData(food + "\n", MEAT_DATA_FILEPATH);

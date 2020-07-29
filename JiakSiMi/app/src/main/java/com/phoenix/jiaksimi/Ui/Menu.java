@@ -55,7 +55,7 @@ public class Menu extends Fragment {
         assert activity != null;
 
         //Setting the properties of recyclerView and its components
-        rAdapter = new FoodRecyclerViewAdapter(activity, activity.getFoodList(FoodType.MEAL), "meal");
+        rAdapter = new FoodRecyclerViewAdapter(activity, activity.getFoodList(FoodType.LUNCH), "lunch");
         foodRecyclerView.setAdapter(rAdapter);
         foodRecyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
         foodRecyclerView.setHasFixedSize(true);
@@ -80,7 +80,7 @@ public class Menu extends Fragment {
                 int index = tab.getPosition();
                 switch (index) {
                     case 0:
-                        rAdapter.changeDataSet(activity.getFoodList(FoodType.MEAL), "meal");
+                        rAdapter.changeDataSet(activity.getFoodList(FoodType.LUNCH), "lunch");
                         rAdapter.notifyDataSetChanged();
                         break;
                     case 1:

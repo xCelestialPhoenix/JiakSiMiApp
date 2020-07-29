@@ -1,7 +1,7 @@
 package com.phoenix.jiaksimi.Util;
 
 public enum FoodType {
-    MEAL,
+    LUNCH,
     MEAT,
     SOUP,
     VEG

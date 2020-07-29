@@ -14,7 +14,7 @@ import java.io.InputStreamReader;
 import java.util.ArrayList;
 
 import static android.content.Context.MODE_APPEND;
-import static com.phoenix.jiaksimi.Util.Filepath.MEAL_DATA_FILEPATH;
+import static com.phoenix.jiaksimi.Util.Filepath.LUNCH_DATA_FILEPATH;
 import static com.phoenix.jiaksimi.Util.Filepath.MEAT_DATA_FILEPATH;
 import static com.phoenix.jiaksimi.Util.Filepath.SOUP_DATA_FILEPATH;
 import static com.phoenix.jiaksimi.Util.Filepath.VEG_DATA_FILEPATH;
@@ -35,7 +35,7 @@ public class StorageManager implements Storage {
 
     public void loadData(Context context) {
 
-        readAndInitFoodList(MEAL_DATA_FILEPATH, model.getList(FoodType.MEAL), context);
+        readAndInitFoodList(LUNCH_DATA_FILEPATH, model.getList(FoodType.LUNCH), context);
         readAndInitFoodList(MEAT_DATA_FILEPATH, model.getList(FoodType.MEAT), context);
         readAndInitFoodList(SOUP_DATA_FILEPATH, model.getList(FoodType.SOUP), context);
         readAndInitFoodList(VEG_DATA_FILEPATH, model.getList(FoodType.VEG), context);

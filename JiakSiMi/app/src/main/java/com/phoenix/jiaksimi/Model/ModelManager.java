@@ -13,13 +13,13 @@ public class ModelManager implements Model {
     private final static String LOG_TAG = ModelManager.class.getName();
     private final static Logger logger = Logger.getLogger(LOG_TAG);
 
-    private final ArrayList<String> MEAL_LIST;
+    private final ArrayList<String> LUNCH_LIST;
     private final ArrayList<String> MEAT_LIST;
     private final ArrayList<String> SOUP_LIST;
     private final ArrayList<String> VEG_LIST;
 
     public ModelManager() {
-        MEAL_LIST = new ArrayList<>();
+        LUNCH_LIST = new ArrayList<>();
         MEAT_LIST = new ArrayList<>();
         SOUP_LIST = new ArrayList<>();
         VEG_LIST = new ArrayList<>();
@@ -27,7 +27,7 @@ public class ModelManager implements Model {
 
     @SuppressWarnings("unchecked")
     private ModelManager(Parcel in) {
-        MEAL_LIST = in.readArrayList(String.class.getClassLoader());
+        LUNCH_LIST = in.readArrayList(String.class.getClassLoader());
         MEAT_LIST = in.readArrayList(String.class.getClassLoader());
         SOUP_LIST = in.readArrayList(String.class.getClassLoader());
         VEG_LIST = in.readArrayList(String.class.getClassLoader());
@@ -40,8 +40,8 @@ public class ModelManager implements Model {
         logger.setLevel(Level.WARNING);
 
         switch (type) {
-            case MEAL:
-                return MEAL_LIST.add(food);
+            case LUNCH:
+                return LUNCH_LIST.add(food);
             case MEAT:
                 return MEAT_LIST.add(food);
             case VEG:
@@ -59,8 +59,8 @@ public class ModelManager implements Model {
         logger.setLevel(Level.WARNING);
 
         switch (type) {
-            case MEAL:
-                return MEAL_LIST;
+            case LUNCH:
+                return LUNCH_LIST;
             case MEAT:
                 return MEAT_LIST;
             case VEG:
@@ -94,7 +94,7 @@ public class ModelManager implements Model {
 
     @Override
     public void writeToParcel(Parcel dest, int flags) {
-        dest.writeList(MEAL_LIST);
+        dest.writeList(LUNCH_LIST);
         dest.writeList(MEAT_LIST);
         dest.writeList(SOUP_LIST);
         dest.writeList(VEG_LIST);
